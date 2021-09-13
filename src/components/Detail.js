@@ -3,7 +3,6 @@ import '../styles/detail.css'
 
 const Detail = (props) => {
     let nowState = props.location.state
-    console.log(nowState)
 
     useEffect(() => {
         if (nowState === undefined) {
