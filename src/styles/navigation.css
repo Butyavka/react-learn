@@ -1,0 +1,16 @@
+.navigation {
+    background-color: #fff;
+}
+.navigation__list {
+    width: 100%;
+}
+.navigation__link {
+    font-size: 20px;
+    text-decoration: none;
+    color: #b4aeb9;
+    margin-right: 20px;
+    transition: color .2s linear;
+}
+.navigation__link:hover {
+    color: #4c4b4d;
+}
