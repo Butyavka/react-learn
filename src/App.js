@@ -1,18 +1,14 @@
 import React from 'react'
-import {HashRouter, Route} from 'react-router-dom'
-import About from './routes/About'
-import Home from './routes/Home'
+import {BrowserRouter} from 'react-router-dom'
 import Navigation from './components/Navigation'
-import Detail from './components/Detail'
 import "./styles/main.css"
+import AppRouter from "./components/AppRouter";
 
 const App = () => {
-    return <HashRouter>
-        <Navigation />
-        <Route path='/' exact={true} component={Home} />
-        <Route path='/about' component={About} />
-        <Route path='/movie/:id' component={Detail} />
-    </HashRouter>
+    return <BrowserRouter>
+        <Navigation/>
+        <AppRouter/>
+    </BrowserRouter>
 }
 
 export default App

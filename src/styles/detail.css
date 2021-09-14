@@ -24,3 +24,17 @@
 .detail-page__genre {
     margin-right: 10px;
 }
+@media (max-width: 768px) {
+    .detail-page {
+        flex-direction: column;
+    }
+    .detail-page__img-box {
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 500px) {
+
+    .detail-page__img-box {
+        max-width: 240px;
+    }
+}

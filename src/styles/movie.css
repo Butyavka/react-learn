@@ -9,6 +9,7 @@
 .movie {
     display: flex;
     width: 45%;
+    min-height: 320px;
     background-color: #fff;
     align-items: flex-start;
     justify-content: space-between;
@@ -54,4 +55,32 @@
 .movie__year {
     font-size: 14px;
     margin-right: 10px;
+}
+@media (max-width: 1000px) {
+    .movie {
+        width: 49%;
+    }
+    .movie__img {
+        max-width: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .movie {
+        width: 100%;
+        margin: 50px 0
+    }
+    .movie__img {
+        max-width: 190px;
+    }
+}
+@media (max-width: 500px) {
+    .movie {
+        flex-direction: column;
+    }
+    .movie__img {
+        top: 0;
+        margin-bottom: 20px;
+        max-width: 170px;
+    }
 }
