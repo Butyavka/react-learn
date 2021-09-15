@@ -17,7 +17,6 @@ const AppRouter = () => {
                     <Route path={route.path} exact={route.exact} component={route.component} key={route.path}/>
                 )}
                 <Redirect from="/login" to="/" />
-                <Redirect from="/react-learn" to="/" />
                 <Redirect to='/error404'/>
             </Switch>
             :
