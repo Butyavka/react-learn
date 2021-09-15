@@ -16,7 +16,7 @@ const AppRouter = () => {
                 {privateRoutes.map(route =>
                     <Route path={route.path} exact={route.exact} component={route.component} key={route.path}/>
                 )}
-                <Redirect from="/login" to="/" />
+                <Redirect from="/login" to="/react-learn" />
                 <Redirect to='/error404'/>
             </Switch>
             :
