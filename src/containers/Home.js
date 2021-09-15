@@ -3,6 +3,7 @@ import axios from 'axios';
 import Movie from "../components/Movie";
 import {getMovies} from "../api/getMovies";
 import {getPageCount, getPagesArray} from "../utils/pages"
+import Pagination from "../components/Pagination";
 
 const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -14,8 +15,6 @@ const Home = () => {
     useEffect(() => {
         getMovies(limit, page).then(res => {
             let response = res.data.data;
-
-            console.log('res', response)
 
             setMovies(response.movies);
             const totalCount = response.movie_count
@@ -47,7 +46,7 @@ const Home = () => {
                         })}
                     </div>
                 }
-                {/*<Pagination totalPages={totalPages} page={page} setPage={setPage}/>*/}
+                <Pagination totalPages={totalPages} page={page} setPage={setPage}/>
             </section>
         </>
     );

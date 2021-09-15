@@ -1,6 +1,6 @@
 import React from "react";
 import {Redirect, Route, Switch} from "react-router-dom";
-import Home from "../routes/Home";
+import Home from "../containers/Home";
 import About from "./About";
 import Detail from "./Detail";
 import Error404 from "./Error404";
