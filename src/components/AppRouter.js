@@ -1,9 +1,9 @@
 import React from "react";
 import {Redirect, Route, Switch} from "react-router-dom";
 import Home from "../routes/Home";
-import About from "../routes/About";
+import About from "./About";
 import Detail from "./Detail";
-import Error404 from "../routes/Error404";
+import Error404 from "./Error404";
 
 const AppRouter = () => {
     return (

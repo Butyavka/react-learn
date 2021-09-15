@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import '../styles/detail.css'
+import {addDefaultSrc} from "../utils/addDefaultSrc";
 
 const Detail = (props) => {
     let nowState = props.location.state
@@ -18,7 +19,7 @@ const Detail = (props) => {
         <div className="container">
             <div className="detail-page">
                 <div className="detail-page__img-box">
-                    <img src={nowState.poster} alt={nowState.title} title={nowState.title} className="detail-page__img"/>
+                    <img onError={e => addDefaultSrc(e)} src={nowState.poster} alt={nowState.title} title={nowState.title} className="detail-page__img"/>
                 </div>
                 <div className="detail-page__info">
                     <h3 className="detail-page__title">{nowState.title}</h3>
