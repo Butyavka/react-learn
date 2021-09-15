@@ -6,6 +6,9 @@
 body {
     background-color: #eff3f7;
 }
+.hidden {
+    width: 100%;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -14,10 +17,4 @@ body {
     margin: 0 auto;
     max-width: 1360px;
     width: 100%;
-}
-.loader {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/error404.css"
-import img404 from "../images/404.png"
+import img404 from "../assets/images/404.png"
 
 const Error404 = () => {
     return <div className='container'>

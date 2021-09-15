@@ -1,0 +1,19 @@
+.header {
+    background-color: #fff;
+}
+.header__content {
+    display: flex;
+}
+.header__button {
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #fa6a6a;
+    transition: background-color .2s linear;
+}
+.header__button:hover {
+    background-color: #f64b4b;
+}

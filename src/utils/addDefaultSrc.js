@@ -1,4 +1,4 @@
-import img from "../images/gerald.jpg"
+import img from "../assets/images/gerald.jpg"
 
 export function addDefaultSrc(e) {
     e.target.src = img

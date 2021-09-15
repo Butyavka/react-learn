@@ -7,7 +7,7 @@
 .pagination__button {
     width: 50px;
     height: 40px;
-    border: 1px solid #b4aeb9;
+    border: none;
     background-color: #fff;
     cursor: pointer;
     border: none;
@@ -21,6 +21,6 @@
 .pagination__button--current {
     width: 50px;
     height: 40px;
-    border: 1px solid #b4aeb9;
+    color: #fff;
     background-color: #ccc;
 }
