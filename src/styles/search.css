@@ -1,0 +1,19 @@
+.search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+}
+.search__box {
+    width: 100%;
+    margin-left: 20px;
+}
+.search__input {
+    padding: 10px;
+    font-size: 15px;
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    transition: box-shadow .2s linear;
+}
+.search__input:hover {
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.3);
+}

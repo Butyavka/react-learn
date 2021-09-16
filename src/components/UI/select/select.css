@@ -1,0 +1,14 @@
+.select {
+    max-width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: #2c2c2c;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    transition: box-shadow .2s linear;
+}
+.select:hover {
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.3);
+}

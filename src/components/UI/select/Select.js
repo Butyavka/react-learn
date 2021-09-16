@@ -1,10 +1,14 @@
 import React from "react";
+import './select.css'
 
-const Select = ({options, value, onChange, defaultValue}) => {
+const Select = ({options, defaultValue, value, onChange}) => {
     return (
         <select
+            className='select'
+            value={value}
             onChange={event => onChange(event.target.value)}
         >
+            <option disabled={true} value="defaultValue">{defaultValue}</option>
             {options.map(option => (
                 <option key={option.value} value={option.value}>
                     {option.name}

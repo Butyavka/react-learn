@@ -4,7 +4,7 @@ import "../styles/loader.css"
 const Loading = () => {
     return (
         <span className='loader__text'>
-            Загрузка...
+            Загрузка
         </span>
     )
 }
