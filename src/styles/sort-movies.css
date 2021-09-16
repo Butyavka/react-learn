@@ -1,0 +1,15 @@
+.sort__box {
+    margin: 20px 0;
+}
+.sort__select {
+    max-width: 300px;
+}
+@media (max-width: 500px) {
+    .sort__box {
+        width: 100%;
+    }
+    .sort__select {
+        max-width: 500px;
+        width: 100%;
+    }
+}

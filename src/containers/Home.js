@@ -8,7 +8,9 @@ import Select from "../components/UI/select/Select";
 import Input from "../components/UI/input/Input";
 import '../styles/search.css'
 import '../styles/not-found.css'
+import '../styles/sort-movies.css'
 import panda from '../assets/images/panda.jpg'
+import Button from "../components/UI/button/Button";
 
 const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -67,10 +69,12 @@ const Home = () => {
                             ]}
                             value={selectedSort}
                             onChange={sortMovies}
+                            selectClass='sort__select'
                         />
                     </div>
                     <div className='search__box'>
                         <Input value={searchQuery} onChange={e => setSearchQuery(e.target.value)} inputPlaceholder='Поиск' inputClass='search__input'/>
+                        <Button onClick={e => setSearchQuery('')} buttonClass='search__button' text='Очистить'/>
                     </div>
                 </div>
                 {isLoading &&
@@ -101,7 +105,7 @@ const Home = () => {
                         <img src={panda} alt="panda" className='not-found__img'/>
                     </div>
                 }
-                <Pagination totalPages={totalPages} page={page} setPage={setPage}/>
+                {sortedAndSearchMovies.length === limit ? <Pagination totalPages={totalPages} page={page} setPage={setPage}/> : '' }
             </section>
         </>
     );

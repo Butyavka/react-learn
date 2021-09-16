@@ -1,10 +1,10 @@
 import React from "react";
 import './select.css'
 
-const Select = ({options, defaultValue, value, onChange}) => {
+const Select = ({options, defaultValue, value, onChange, selectClass}) => {
     return (
         <select
-            className='select'
+            className={'select ' + selectClass}
             value={value}
             onChange={event => onChange(event.target.value)}
         >

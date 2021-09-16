@@ -59,6 +59,7 @@
 @media (max-width: 1000px) {
     .movie {
         width: 49%;
+        margin-bottom: 30px;
     }
     .movie__img {
         max-width: 140px;
@@ -68,7 +69,7 @@
 @media (max-width: 768px) {
     .movie {
         width: 100%;
-        margin: 50px 0
+        margin: 50px 0 20px
     }
     .movie__img {
         max-width: 190px;
@@ -77,6 +78,7 @@
 @media (max-width: 500px) {
     .movie {
         flex-direction: column;
+        margin: 12px 0;
     }
     .movie__img {
         top: 0;
