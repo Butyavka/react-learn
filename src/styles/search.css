@@ -1,4 +1,4 @@
-.search {
+.filter {
     display: flex;
     align-items: center;
     width: 100%;
@@ -36,7 +36,7 @@
 }
 
 @media (max-width: 500px) {
-    .search {
+    .filter {
         flex-direction: column-reverse;
     }
     .search__box {

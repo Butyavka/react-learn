@@ -4,41 +4,36 @@ import {getMovies} from "../api/getMovies";
 import {getPageCount, getPagesArray} from "../utils/pages"
 import Pagination from "../components/Pagination";
 import Loading from "../components/Loading";
-import Select from "../components/UI/select/Select";
-import Input from "../components/UI/input/Input";
-import '../styles/search.css'
 import '../styles/not-found.css'
-import '../styles/sort-movies.css'
 import panda from '../assets/images/panda.jpg'
-import Button from "../components/UI/button/Button";
+import MoviesFilter from "../components/MoviesFilter";
 
 const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [movies, setMovies] = useState([]);
-    const [selectedSort, setSelectedSort] = useState('')
     const [totalPages, setTotalPages] = useState(0);
     const [limit, setLimit] = useState(15);
     const [page, setPage] = useState(1);
-    const [searchQuery, setSearchQuery] = useState('')
+    const [filter, setFilter] =useState({sort: '', query: ''})
     const lastElement = useRef()
 
     const sortedMovies = useMemo(() => {
-        if (selectedSort) {
+        if (filter.sort) {
             return (
-                selectedSort === 'title'
+                filter.sort === 'title'
                     ?
-                    [...movies].sort((a, b) => a[selectedSort].localeCompare(b[selectedSort]))
+                    [...movies].sort((a, b) => a[filter.sort].localeCompare(b[filter.sort]))
                     :
-                    [...movies].sort((a, b) => a[selectedSort] - b[selectedSort])
+                    [...movies].sort((a, b) => a[filter.sort] - b[filter.sort])
             )
         } else {
             return movies
         }
-    }, [selectedSort, movies])
+    }, [filter.sort, movies])
 
     const sortedAndSearchMovies = useMemo(() => {
-        return sortedMovies.filter(movie => movie.title.toLowerCase().includes(searchQuery))
-    }, [searchQuery, sortedMovies])
+        return sortedMovies.filter(movie => movie.title.toLowerCase().includes(filter.query))
+    }, [filter.query, sortedMovies])
 
     useEffect(() => {
         setIsLoading(true)
@@ -51,32 +46,13 @@ const Home = () => {
         });
     }, [page])
 
-    const sortMovies = sort => setSelectedSort(sort)
-
     // useObserver(lastElement, page < totalPages, isLoading, () => {
     //     setPage(page + 1)
     // })
     return (
         <>
             <section className='container'>
-                <div className='search'>
-                    <div className='sort__box'>
-                        <Select
-                            defaultValue='Сортировка по'
-                            options={[
-                                {value:'title', name: 'По названию'},
-                                {value:'year', name: 'По году выхода'}
-                            ]}
-                            value={selectedSort}
-                            onChange={sortMovies}
-                            selectClass='sort__select'
-                        />
-                    </div>
-                    <div className='search__box'>
-                        <Input value={searchQuery} onChange={e => setSearchQuery(e.target.value)} inputPlaceholder='Поиск' inputClass='search__input'/>
-                        <Button onClick={e => setSearchQuery('')} buttonClass='search__button' text='Очистить'/>
-                    </div>
-                </div>
+                <MoviesFilter filter={filter} setFilter={setFilter}/>
                 {isLoading &&
                 <div className='loader'>
                     <Loading/>
