@@ -32,7 +32,7 @@ const Home = () => {
     }, [filter.sort, movies])
 
     const sortedAndSearchMovies = useMemo(() => {
-        return sortedMovies.filter(movie => movie.title.toLowerCase().includes(filter.query))
+        return sortedMovies.filter(movie => movie.title.toLowerCase().includes(filter.query.toLowerCase()))
     }, [filter.query, sortedMovies])
 
     useEffect(() => {
