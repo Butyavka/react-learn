@@ -8,7 +8,7 @@ const Movie = ({id, year, title, summary, poster, genres}) => {
 
     return (
         <Link to={{
-            pathname: `/movie/${id}`,
+            pathname: `/react-learn/movie/${id}`,
             state: {
                 id,
                 // year,
