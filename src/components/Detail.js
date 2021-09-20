@@ -7,14 +7,15 @@ import Loading from "./Loading";
 
 
 const Detail = (props) => {
-    let nowState = props.location.state
+    const urlArray = window.location.href.split('/')
+    const id = urlArray[urlArray.length - 1]
     const [movie, setMovie] = useState(null)
     const [fetchMovieById, isLoading, error] = useFetching(async (id) => {
         const response = await getById(id)
         setMovie(response.data.data.movie)
     })
     useEffect(() => {
-        fetchMovieById(nowState.id)
+        fetchMovieById(id)
     }, [])
     return (
         <div className="container">
