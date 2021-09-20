@@ -8,3 +8,8 @@ export const getMovies = async (limit = 10, page = 1) => {
         }
     })
 }
+
+export const getById= async (id) => {
+    return await axios.get('https://yts.mx/api/v2/movie_details.json?movie_id=' + id
+    )
+}

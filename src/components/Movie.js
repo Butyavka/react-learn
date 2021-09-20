@@ -11,11 +11,11 @@ const Movie = ({id, year, title, summary, poster, genres}) => {
             pathname: `/movie/${id}`,
             state: {
                 id,
-                year,
-                title,
-                summary,
-                poster,
-                genres
+                // year,
+                // title,
+                // summary,
+                // poster,
+                // genres
             }
         }} key={id} className="movie">
             <img onError={e => addDefaultSrc(e)} src={poster} alt={title} title={title} className="movie__img"/>
