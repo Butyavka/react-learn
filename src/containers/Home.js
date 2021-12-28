@@ -12,10 +12,10 @@ const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [movies, setMovies] = useState([]);
     const [totalPages, setTotalPages] = useState(0);
-    const [limit, setLimit] = useState(15);
+    const [limit, setLimit] = useState(16);
     const [page, setPage] = useState(1);
     const [filter, setFilter] =useState({sort: '', query: ''})
-    const lastElement = useRef()
+    // const lastElement = useRef()
 
     const sortedMovies = useMemo(() => {
         if (filter.sort) {
@@ -46,9 +46,6 @@ const Home = () => {
         });
     }, [page])
 
-    // useObserver(lastElement, page < totalPages, isLoading, () => {
-    //     setPage(page + 1)
-    // })
     return (
         <>
             <section className='container'>
@@ -61,18 +58,16 @@ const Home = () => {
                 {sortedAndSearchMovies.length || isLoading
                     ?
                     <div className="movies">
-                        {sortedAndSearchMovies.map(movie => {
-                            return (
-                                <Movie key={movie.id}
-                                       id={movie.id}
-                                       year={movie.year}
-                                       title={movie.title}
-                                       summary={movie.summary}
-                                       poster={movie.medium_cover_image}
-                                       genres={movie.genres}
-                                />
-                            )
-                        })}
+                        {sortedAndSearchMovies.map(movie => (
+                            <Movie key={movie.id}
+                                   id={movie.id}
+                                   year={movie.year}
+                                   title={movie.title}
+                                   summary={movie.summary}
+                                   poster={movie.medium_cover_image}
+                                   genres={movie.genres ? movie.genres : []}
+                            />
+                        ))}
                         {/*<div ref={lastElement} className='hidden'></div>*/}
                     </div>
                     :
